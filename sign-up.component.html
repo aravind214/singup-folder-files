@@ -1,0 +1,176 @@
+<!-- <div *ngFor="let item of registrationData1">
+<input class="col s6" type="text" [(ngModel)]="UserId">
+<button (click)="show()" type="submit">submit</button>
+</div> -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">
+     
+      <img class="imgProfil" src="http://maxpixel.freegreatpicture.com/static/photo/1x/Redhead-Girl-Person-People-Woman-Female-Avatar-995164.png" alt="" class="circle" height="40px" width="50px">
+  </a>
+    <form action="" method="post">
+      <div class="input-field">
+          <input id="search" type="search" name="search">
+          <label class="label-icon" for="search" ><i class="material-icons">search</i></label>
+          <i class="material-icons" style="margin-right: 300px;">close</i>
+      </div>
+  </form>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="http://localhost:4200/login" (click)="login()">Login in to Existing Account</a></li>
+      <li><a href="register.html" class="btn-flat disabled">Register</a></li>
+      <li><a href="cart.html">Notifications <span class="nav-badge"><span class="new badge">2</span></span></a></li>
+      
+  </ul>
+  <ul class="side-nav" id="mobile-demo">
+      <li><a href="http://localhost:4200/login" (click)="login()">Login</a></li>
+      <li><a href="register.html" class="btn-flat disabled">Register</a></li>
+      <li><a href="mobile.html">Cart<span class="badge new nav-badge">1</span></a></li>
+  </ul>
+</div>
+</nav>
+<!-- <div class="navbar-fixed">
+  <nav class="transparent">
+      <div class="nav-wrapper">
+          <ul class="left">
+              <li>
+                  <a>
+                      <i class="hamburger material-icons hide-on-med-and-up">menu</i>
+                  </a>
+              </li>
+          </ul>
+              <form action="" method="post">
+                  <div class="input-field">
+                      <input id="search" type="search" name="search">
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                  </div>
+              </form>
+          <ul class="right">
+              <li>
+                  <a>
+                      <i class="material-icons">notifications_none</i>
+                  </a>
+              </li>
+              <li class="imgProfil">
+                  <img src="http://maxpixel.freegreatpicture.com/static/photo/1x/Redhead-Girl-Person-People-Woman-Female-Avatar-995164.png" alt="" class="circle">
+              </li>
+                  <ul id="AccountInfo" class="hidden z-depth-5">
+                      <li>sdfsdf</li>
+                      <li>fghfgh</li>
+                      <li>jkjkljkljkl</li>
+                      <li>xwcxwcwxcwxc</li>
+                  </ul>
+              <li>
+                  <a href="">
+                      <i class="material-icons">exit_to_app</i>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</div> -->
+<div class="row" style="margin-right: 13%;">
+    <div class="col s8 offset-s2">
+        <div class="card centrer-align" >
+            <div class="sm-jumbotron centrer-align">
+                <h2>User Registration</h2>
+            </div>
+    <form class="col s12 white needs-validation" #form="ngForm" (ngSubmit)="onSubmit(form.value)" novalidate>
+    <div class="row form-group" [class.has-error]="UserName.invalid && UserName.touched">
+            <div class="col s12">
+        <!-- <input type="text" required placeholder="UserId" name="UserId" ngModel> -->
+        <span style="color: red;">*</span>
+               <input type="text" class="is-valid form-control" required placeholder="UserName" name="UserName" #UserName="ngModel"  id="validationServer01" [(ngModel)]="registrationmember.UserName">
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+    </div>
+    <div class="row form-group" [class.has-error]="Password.invalid && Password.touched">
+        <div class="col s6">
+          <span style="color: red;">*</span>
+            <input type="password" required minlength="5" class="form-control" placeholder="Password" name="Password" #Password="ngModel" [(ngModel)]="registrationmember.Password">
+            
+        </div>
+        <div class="col s6 form-group" [class.has-error]="ConfirmPassword.invalid && ConfirmPassword.touched">
+          <span style="color: red;">*</span>
+            <input class="form-control" type="password" required minlength="5" #ConfirmPassword="ngModel"  placeholder="ConfirmPassword" name="ConfirmPassword" id="ConfirmPassword" [(ngModel)]="registrationmember.ConfirmPassword">
+        </div>
+    </div>
+    <div class="row form-group" [class.has-error]="Email.invalid && Email.touched">
+            <div class="col s12">
+              <span style="color: red;">*</span>
+                <input type="text" class="form-control" required placeholder="Email" name="Email" #Email="ngModel" id="Email" [(ngModel)]="registrationmember.Email">
+            </div>
+    </div>
+    <div class="row">
+            <div class="col s6">
+                <input type="text" required placeholder="FirstName" name="FirstName" id="FirstName" [(ngModel)]="registrationmember.FirstName">
+            </div>
+        <div class="col s6">
+           <input type="text" required placeholder="LastName" name="LastName" id="LastName" [(ngModel)]="registrationmember.LastName">
+        </div>
+    </div>
+        <!-- <input type="text" required placeholder="UserName" name="UserName" ngModel> -->
+    <div class="row">
+        <div class="col s12">
+            <button class="btn-large btn-submit" type="submit" >Sign Up</button>
+        </div>
+    </div>
+
+    
+    </form>
+</div>
+</div>
+</div>
+
+<!-- <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+        <div class="sm-jumbotron center-align">
+          <h2>User Registration</h2>
+        </div>
+        <form class="col s12 white" #form="ngForm" (ngSubmit)="onSubmit(form.value)>
+          <div class="row">
+            <div class="input-field col s12">
+             <input type="text" required placeholder="UserName" name="UserName" id="UserName" [(ngModel)]="registrationmember.UserName">
+              <label >UserName</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+                <input type="text" required placeholder="Password" name="Password" id="Password" [(ngModel)]="registrationmember.Password">
+              <label>Password</label>
+            </div>
+            <div class="input-field col s6">
+               <input type="text" required placeholder="ConfirmPassword" name="ConfirmPassword" id="ConfirmPassword" [(ngModel)]="registrationmember.ConfirmPassword">
+              <label>ConfirmPassword</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+               <input type="text" required placeholder="Email" name="Email" id="Email" [(ngModel)]="registrationmember.Email">
+              <label>Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" required placeholder="FirstName" name="FirstName" id="FirstName" [(ngModel)]="registrationmember.FirstName">
+              <label>First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" required placeholder="LastName" name="LastName" id="LastName" [(ngModel)]="registrationmember.LastName">
+              <label>Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                 <button type="submit">Sign Up</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
